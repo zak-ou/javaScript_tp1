@@ -195,8 +195,14 @@
             <p id="affichage7">Votre nom apparaîtra ici</p>
         </div>
         <script>
-            function afficherNom() { }
-            function appliquerCouleur() { }
+            function afficherNom() {
+                const nom = document.querySelector('#nom').value;
+                document.querySelector('#affichage7').innerText = 'Bonjour ' + nom + ' !';
+            }
+            function appliquerCouleur() {
+                const couleur = document.querySelector('#couleur').value;
+                document.querySelector('#affichage7').style.color = couleur;
+            }
         </script>
     </div>
 
