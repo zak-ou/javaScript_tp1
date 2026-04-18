@@ -252,10 +252,29 @@
             <p>Rouge si négatif, vert si positif, noir si zéro</p>
         </div>
         <script>
-            function incrementer() { }
-            function decrementer() { }
-            function reinitialiser() { }
-            function ajusterCouleur(valeur) { }
+            function incrementer() {
+                const el = document.querySelector('#compteur');
+                let valeur = parseInt(el.innerText) + 1;
+                el.innerText = valeur;
+                ajusterCouleur(valeur);
+            }
+            function decrementer() {
+                const el = document.querySelector('#compteur');
+                let valeur = parseInt(el.innerText) - 1;
+                el.innerText = valeur;
+                ajusterCouleur(valeur);
+            }
+            function reinitialiser() {
+                const el = document.querySelector('#compteur');
+                el.innerText = 0;
+                ajusterCouleur(0);
+            }
+            function ajusterCouleur(valeur) {
+                const el = document.querySelector('#compteur');
+                if (valeur < 0) { el.style.color = 'red'; }
+                else if (valeur > 0) { el.style.color = 'green'; }
+                else { el.style.color = 'black'; }
+            }
         </script>
     </div>
 
