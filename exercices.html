@@ -101,9 +101,15 @@
             <button onclick="basculerClasse()">Basculer style</button>
         </div>
         <script>
-            function ajouterClasse() { }
-            function enleverClasse() { }
-            function basculerClasse() { }
+            function ajouterClasse() {
+                document.querySelector('#paragraphe4').classList.add('rouge', 'grand-texte');
+            }
+            function enleverClasse() {
+                document.querySelector('#paragraphe4').classList.remove('rouge', 'grand-texte');
+            }
+            function basculerClasse() {
+                document.querySelector('#paragraphe4').classList.toggle('bordure');
+            }
         </script>
     </div>
 
