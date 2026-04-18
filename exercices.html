@@ -78,8 +78,12 @@
             <button onclick="effacerContenu()">Effacer</button>
         </div>
         <script>
-            function ajouterContenu() { }
-            function effacerContenu() { }
+            function ajouterContenu() {
+                document.querySelector('#conteneur3').innerHTML = '<h4>Nouveau titre</h4><p>Nouveau paragraphe</p>';
+            }
+            function effacerContenu() {
+                document.querySelector('#conteneur3').innerHTML = '';
+            }
         </script>
     </div>
 
