@@ -129,8 +129,18 @@
             <button onclick="numeroteTous()">Numéroter</button>
         </div>
         <script>
-            function colorierTous() { }
-            function numeroteTous() { }
+            function colorierTous() {
+                const items = document.querySelectorAll('.item');
+                for (let i = 0; i < items.length; i++) {
+                    items[i].style.backgroundColor = 'yellow';
+                }
+            }
+            function numeroteTous() {
+                const items = document.querySelectorAll('.item');
+                for (let i = 0; i < items.length; i++) {
+                    items[i].innerText = (i + 1) + '. Item ' + (i + 1);
+                }
+            }
         </script>
     </div>
 
