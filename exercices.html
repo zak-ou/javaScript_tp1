@@ -294,7 +294,20 @@
             <div id="contenu3" class="contenu-onglet cache"><h4>Contenu de l'onglet 3</h4><p>Sed do eiusmod tempor.</p></div>
         </div>
         <script>
-            function afficherOnglet(numero) { }
+            function afficherOnglet(numero) {
+                const contenus = document.querySelectorAll('.contenu-onglet');
+                for (let i = 0; i < contenus.length; i++) {
+                    contenus[i].classList.remove('visible');
+                    contenus[i].classList.add('cache');
+                }
+                document.querySelector('#contenu' + numero).classList.remove('cache');
+                document.querySelector('#contenu' + numero).classList.add('visible');
+                const onglets = document.querySelectorAll('.onglet');
+                for (let i = 0; i < onglets.length; i++) {
+                    onglets[i].classList.remove('actif');
+                }
+                event.target.classList.add('actif');
+            }
         </script>
     </div>
 
