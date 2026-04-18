@@ -220,9 +220,20 @@
             <ul id="listeTaches"></ul>
         </div>
         <script>
-            function ajouterTache() { }
-            function supprimerTache(bouton) { }
-            function effacerTout() { }
+            function ajouterTache() {
+                const input = document.querySelector('#tache');
+                if (input.value.trim() === '') return;
+                const li = document.createElement('li');
+                li.innerHTML = input.value + ' <button onclick="supprimerTache(this)">X</button>';
+                document.querySelector('#listeTaches').appendChild(li);
+                input.value = '';
+            }
+            function supprimerTache(bouton) {
+                bouton.parentElement.remove();
+            }
+            function effacerTout() {
+                document.querySelector('#listeTaches').innerHTML = '';
+            }
         </script>
     </div>
 
